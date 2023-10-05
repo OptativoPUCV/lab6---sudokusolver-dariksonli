@@ -65,8 +65,8 @@ int is_valid(Node* n) //validar si un estado/nodo es válido
     //No se repitan números en las columnas
     for(int j = 0; j < 9 ; j++){ 
       if(n->sudo[j][i] != 0){
-        if(arregloCols[n->sudo[i][j]] == 1) return 0; //si se repite retorna 0
-        arregloCols[n->sudo[i][j]] = 1; //guardar numero
+        if(arregloCols[n->sudo[j][i]] == 1) return 0; //si se repite retorna 0
+        arregloCols[n->sudo[j][i]] = 1; //guardar numero
       }
     }
   }
