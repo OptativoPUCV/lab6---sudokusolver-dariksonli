@@ -51,13 +51,12 @@ int is_valid(Node* n) //validar si un estado/nodo es válido
   
   int arregloFilas[10] = {};
   int arregloCols[10] = {};
-  return 1;
   //int arregloSubm[10] = {};
   //recorro matriz
   for(int i = 0 ; i < 9 ; i++){
     //No se repitan números en las filas
     for(int j = 0; j < 9 ; j++){ 
-      if(n->sudo[i][j] != 0){
+      if(n->sudo[i][j] != 0){ //si la casilla no es cero
         if(arregloFilas[n->sudo[i][j]] == 1) return 0; //si se repite retorna 0
         arregloFilas[n->sudo[i][j]] = 1; //guardar numero
       }
@@ -101,8 +100,16 @@ List* get_adj_nodes(Node* n)
 }
 
 
-int is_final(Node* n){
-    return 0;
+int is_final(Node* n)
+{
+  for(int i = 0; i<9;i++){
+    for(int j=0; j<9;j++){
+      if(n->sudo[i][j] == 0){
+        return 0;
+      }
+    }
+  }
+  return 1;
 }
 
 Node* DFS(Node* initial, int* cont){
