@@ -51,10 +51,26 @@ int is_valid(Node* n){
     return 1;
 }
 
-
-List* get_adj_nodes(Node* n){
-    List* list=createList();
-    return list;
+// Función que devuelve una lista de nodos adyacentes
+List* get_adj_nodes(Node* n)
+{
+  List* list=createList();
+  
+  for(int i=0; i < 9; i++){
+    for(int j=0; j < 9; j++){
+      // Si la celda está vacía
+      if(n->sudo[i][j] == 0) //retornar una lista con **9 nodos**
+      {
+        for(int k = 1; k < 10 ; k++){
+          n->sudo[i][j] = k; //asigno valor a la casilla
+          Node* newNode = copy(n);
+          // Agregar el nuevo estado a la lista de nodos adyacentes
+          pushBack(list, newNode);  
+        }
+      }
+    }
+  }
+  return list;
 }
 
 
