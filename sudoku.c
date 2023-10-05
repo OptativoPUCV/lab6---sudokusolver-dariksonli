@@ -46,9 +46,35 @@ void print_node(Node* n){
     printf("\n");
 }
 
-int is_valid(Node* n){
-
-    return 1;
+int is_valid(Node* n) //validar si un estado/nodo es válido
+{
+  
+  int arregloFilas[10] = {};
+  int arregloCols[10] = {};
+  int arregloSubm[10] = {};
+  //recorro matriz
+  for(int i = 0 ; i < 9 ; i++){
+    //No se repitan números en las filas
+    for(int j = 0; j < 9 ; j++){ 
+      if(n->sudo[i][j] != 0){
+        if(arregloFilas[n->sudo[i][j]] == 1) return 0; //si se repite retorna 0
+        arregloFilas[n->sudo[i][j]] = 1; //guardar numero
+      }
+    }
+    
+    //No se repitan números en las columnas
+    for(int j = 0; j < 9 ; j++){ 
+      if(n->sudo[j][i] != 0){
+        if(arregloCols[n->sudo[i][j]] == 1) return 0; //si se repite retorna 0
+        arregloCols[n->sudo[i][j]] = 1; //guardar numero
+      }
+    }
+  }
+  
+  //No se repitan números en las submatrices de 3x3
+  
+  
+  return 1;
 }
 
 // Función que devuelve una lista de nodos adyacentes

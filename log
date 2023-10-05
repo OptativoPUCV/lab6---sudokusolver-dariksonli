@@ -10,3 +10,14 @@ Thu 05 Oct 2023 07:32:25 PM UTC:
  tests:  2|4
 total_score: 15/70
 b87ae41
+Thu 05 Oct 2023 07:55:02 PM UTC: 
+ sudoku.c | 28 +++++++++++++++++++++++++++-
+ 1 file changed, 27 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:54:7: error: unused variable ‘arregloSubm’ [-Werror=unused-variable]
+   54 |   int arregloSubm[10] = {};
+      |       ^~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+28d7d93
