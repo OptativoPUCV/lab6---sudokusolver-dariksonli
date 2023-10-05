@@ -51,7 +51,7 @@ int is_valid(Node* n) //validar si un estado/nodo es válido
   
   int arregloFilas[10] = {};
   int arregloCols[10] = {};
-  int arregloSubm[10] = {};
+  //int arregloSubm[10] = {};
   //recorro matriz
   for(int i = 0 ; i < 9 ; i++){
     //No se repitan números en las filas
